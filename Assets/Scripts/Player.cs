@@ -53,4 +53,14 @@ public class Player : MonoBehaviour
             Mathf.Clamp(transform.position.y, minY, maxY)
         );
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("colidiu");
+        if (collision.CompareTag("Coin"))
+        {
+            
+            Destroy(collision.gameObject);
+        }
+    }
 }
