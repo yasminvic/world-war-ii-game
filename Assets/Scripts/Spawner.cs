@@ -1,4 +1,6 @@
+using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
@@ -19,6 +21,7 @@ public class Spawner : MonoBehaviour
     void Awake()
     {
         int randomDelay = Random.Range(delaySpawnMin, delaySpawnMax);
+        Debug.Log(randomDelay);
         InvokeRepeating(nameof(Spawn), initialDelay, randomDelay);
     }
 

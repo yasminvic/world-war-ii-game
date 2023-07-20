@@ -879,7 +879,7 @@ GameObject:
   - component: {fileID: 1105150595}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1660,10 +1660,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1849234266}
+  - component: {fileID: 1849234267}
   m_Layer: 0
   m_Name: CoinSpawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1675,13 +1676,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849234265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.33456543, y: -0.7834871, z: -0.016607182}
+  m_LocalPosition: {x: -0.05, y: -2.05, z: -0.016607182}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1849234267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849234265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13bc6763b685f7a41835d3dd80e0d1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab: {fileID: 56953670615149459, guid: 4b58ddc66e728e540829b85a1cf1a485, type: 3}
+  minX: 4.6
+  maxX: -4.6
+  minY: 0
+  maxY: 0
+  initialDelay: 1
+  spawnDelay: 4
 --- !u!1 &1924507183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,7 +1770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002295092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.33, y: -1.88, z: -0.016607182}
+  m_LocalPosition: {x: 37.44, y: -1.88, z: -0.016607182}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1773,8 +1793,8 @@ MonoBehaviour:
   - {fileID: 8684482088334828127, guid: 866bbff0bfac45f4a99700bd6dc08d45, type: 3}
   - {fileID: 7396838138480908001, guid: 864e370dd17a2c04084ffd403be75c89, type: 3}
   - {fileID: 3156675255774270196, guid: e1476cc93346e8e4880bd9fa8089db00, type: 3}
-  delaySpawnMax: 5
-  delaySpawnMin: 2
+  delaySpawnMax: 8
+  delaySpawnMin: 5
   initialDelay: 3
 --- !u!1 &2125444517
 GameObject:
