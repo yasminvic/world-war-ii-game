@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Prefabs")]
+    [SerializeField]
+    private GameObject[] spawnPrefabs;
+
+    [Header("Delay")]
+    [SerializeField]
+    private float delaySpawn;
+
+    [SerializeField]
+    private float initialDelay;
+
+    void Awake()
     {
-        
+        InvokeRepeating(nameof(Spawn), initialDelay, delaySpawn);
     }
 
-    // Update is called once per frame
-    void Update()
+    void Spawn()
     {
+        //float count = 4f;
+        foreach (var prefab in spawnPrefabs)
+        {
+            Instantiate(prefab, transform.position, transform.rotation);
+
+        }
         
     }
 }
