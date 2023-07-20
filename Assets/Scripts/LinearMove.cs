@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class LinearMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Move")]
+    [SerializeField]
+    private float moveSpeed;
 
-    // Update is called once per frame
+    [SerializeField]
+    private Vector2 direction;
+
     void Update()
     {
-        
+        transform.Translate(direction * moveSpeed * Time.deltaTime);
     }
 }

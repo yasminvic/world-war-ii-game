@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
+using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
@@ -12,23 +9,34 @@ public class Spawner : MonoBehaviour
 
     [Header("Delay")]
     [SerializeField]
-    private float delaySpawn;
+    private int delaySpawnMax;
+    [SerializeField]
+    private int delaySpawnMin;
 
     [SerializeField]
     private float initialDelay;
 
     void Awake()
     {
-        InvokeRepeating(nameof(Spawn), initialDelay, delaySpawn);
+        int randomDelay = Random.Range(delaySpawnMin, delaySpawnMax);
+        InvokeRepeating(nameof(Spawn), initialDelay, randomDelay);
     }
 
     void Spawn()
     {
-        //float count = 4f;
+
+        float count = 9f;
         foreach (var prefab in spawnPrefabs)
         {
-            Instantiate(prefab, transform.position, transform.rotation);
+            Instantiate(prefab, 
+                new Vector2
+                (
+                    transform.position.x - count,
+                    transform.position.y
+                ), 
+                transform.rotation);
 
+            count-=3;
         }
         
     }
