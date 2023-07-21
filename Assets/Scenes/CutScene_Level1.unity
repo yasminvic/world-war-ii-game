@@ -879,9 +879,16 @@ MonoBehaviour:
       tanques, apoiados por quase 900 bombardeiros e cerca de 400 avi\xF5es de combate.\r\n"
   titleText: {fileID: 1037830599}
   sentenceText: {fileID: 1134618263}
+  background: {fileID: 1644659336}
   delay: 0.1
   animator: {fileID: 1277460331}
   nameScene: Level 1
+  imgPath:
+    path: CutScenes
+    images:
+    - scene3
+    - scene2
+    - scene1
 --- !u!1 &1644659334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,7 +1139,6 @@ GameObject:
   - component: {fileID: 2062484189}
   - component: {fileID: 2062484188}
   - component: {fileID: 2062484187}
-  - component: {fileID: 2062484190}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1190,19 +1196,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2062484190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062484186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d39f4c9408b9394e8bff4c99a9bc517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imagem: {fileID: 1644659336}
-  imagens:
-  - scene2
-  - scene3

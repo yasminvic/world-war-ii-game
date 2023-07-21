@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI titleText;
     [SerializeField]
     private TextMeshProUGUI sentenceText;
+    [SerializeField]
+    private Image background;
 
     [Header("Delay")]
     [SerializeField]
@@ -28,18 +31,25 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private string nameScene;
 
+    [Header("Images")]
+    [SerializeField]
+    private ImagePath imgPath;
+
     private Queue<string> sentences;
+    private Queue<string> images;
     void Start()
     {
         //instanciando
         new WaitForSeconds(0.5f);
         animator.SetBool("IsOpen", true);
         sentences = new Queue<string>();
+        images = new Queue<string>();
 
         //limpando variaveis
         titleText.text = "";
         sentenceText.text = "";
         sentences.Clear();
+        images.Clear();
         
 
         titleText.text = dialogue.title;
@@ -47,6 +57,11 @@ public class DialogueManager : MonoBehaviour
         foreach (var sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
+        }
+
+        foreach (var image in imgPath.images)
+        {
+            images.Enqueue(image);
         }
 
         DisplayNextSentence();
@@ -61,6 +76,9 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
+        string img = images.Dequeue();
+
+        background.sprite = Resources.Load<Sprite>($"{imgPath.path}/{img}");
 
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
