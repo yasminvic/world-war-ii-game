@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private AudioSource coinSound;
 
+    private int _score = 0;
     void Update()
     {
         //controla a movimentação
@@ -63,8 +64,10 @@ public class Player : MonoBehaviour
         Debug.Log("colidiu");
         if (collision.CompareTag("Coin"))
         {
+            _score++;
             coinSound.Play();
             Destroy(collision.gameObject);
+            FindObjectOfType<Score>().UpdateScore(_score);
         }
     }
 }
