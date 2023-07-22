@@ -14,6 +14,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private BoxCollider2D playerBounds;
 
+    [Header("Sound Effects")]
+    [SerializeField]
+    private AudioSource coinSound;
+
     void Update()
     {
         //controla a movimentação
@@ -59,7 +63,7 @@ public class Player : MonoBehaviour
         Debug.Log("colidiu");
         if (collision.CompareTag("Coin"))
         {
-            
+            coinSound.Play();
             Destroy(collision.gameObject);
         }
     }
