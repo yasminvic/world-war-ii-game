@@ -82,7 +82,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("colidiu");
         if (collision.CompareTag("Coin"))
         {
             _score++;

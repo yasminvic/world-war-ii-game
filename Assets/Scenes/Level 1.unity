@@ -1884,8 +1884,8 @@ MonoBehaviour:
   - {fileID: 8684482088334828127, guid: 866bbff0bfac45f4a99700bd6dc08d45, type: 3}
   - {fileID: 7396838138480908001, guid: 864e370dd17a2c04084ffd403be75c89, type: 3}
   - {fileID: 3156675255774270196, guid: e1476cc93346e8e4880bd9fa8089db00, type: 3}
-  delaySpawnMax: 8
-  delaySpawnMin: 5
+  delaySpawnMax: 5
+  delaySpawnMin: 3
   initialDelay: 3
 --- !u!1 &2125444517
 GameObject:
