@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -19,6 +20,13 @@ public class Player : MonoBehaviour
     private AudioSource coinSound;
 
     private int _score = 0;
+
+
+    [Header("Shoot")]
+    [SerializeField]
+    private GameObject shootPrefab;
+    [SerializeField]
+    private GameObject pivot;
     void Update()
     {
         //controla a movimentação
@@ -26,6 +34,9 @@ public class Player : MonoBehaviour
 
         //limite da tela
         ApplyBounds();
+
+        //atirar
+        Shoot();
     }
 
     void Move()
@@ -57,6 +68,16 @@ public class Player : MonoBehaviour
             Mathf.Clamp(transform.position.x, minX, maxX),
             Mathf.Clamp(transform.position.y, minY, maxY)
         );
+    }
+
+    public void Shoot()
+    {
+        if (!Input.GetButtonDown("Fire1"))
+        {
+            return;
+        }
+
+        Instantiate(shootPrefab, pivot.transform.position, pivot.transform.rotation);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
