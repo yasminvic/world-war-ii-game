@@ -48,6 +48,9 @@ TagManager:
   - name: Background
     uniqueID: 1615794191
     locked: 0
+  - name: Scenario
+    uniqueID: 256688695
+    locked: 0
   - name: Player
     uniqueID: 822052325
     locked: 0

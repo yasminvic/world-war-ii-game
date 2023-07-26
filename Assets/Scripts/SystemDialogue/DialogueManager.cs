@@ -34,6 +34,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private ImagePath imgPath;
 
+    [Header("Audio")]
+    [SerializeField]
+    private AudioSource typeAudio;
+
     private Queue<string> sentences;
     private Queue<string> images;
     void Start()
@@ -87,10 +91,12 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         sentenceText.text = "";
+        typeAudio.Play();
 
         foreach (char letter in sentence.ToCharArray())
         {
             sentenceText.text += letter;
+            
             yield return new WaitForSeconds(delay);
         }
     }
