@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &116546482
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1096,10 +1096,10 @@ MonoBehaviour:
       tanques, apoiados por quase 900 bombardeiros e cerca de 400 avi\xF5es de combate.\r\n"
   titleText: {fileID: 1037830599}
   sentenceText: {fileID: 1134618263}
+  continueButton: {fileID: 116546481}
   background: {fileID: 1644659336}
   delay: 0.1
   animator: {fileID: 1277460331}
-  nameScene: Level 1
   imgPath:
     path: CutScenes
     images:
@@ -1445,6 +1445,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7626245b8ac3458439d7f64f8617e50f, type: 2}
+    - target: {fileID: 3295457911582428985, guid: dec160ce0c7d4014493f27425ee3e659, type: 3}
+      propertyPath: delayAnimation
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3295457911582428986, guid: dec160ce0c7d4014493f27425ee3e659, type: 3}
       propertyPath: m_Camera
       value: 

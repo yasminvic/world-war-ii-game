@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI sentenceText;
     [SerializeField]
+    private GameObject continueButton;
+    [SerializeField]
     private Image background;
 
     [Header("Delay")]
@@ -25,10 +27,6 @@ public class DialogueManager : MonoBehaviour
     [Header("Animation")]
     [SerializeField]
     private Animator animator;
-
-    [Header("Next Scene")]
-    [SerializeField]
-    private string nameScene;
 
     [Header("Images")]
     [SerializeField]
@@ -91,12 +89,15 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        continueButton.SetActive(false);
+
         string sentence = sentences.Dequeue();
         string img = images.Dequeue();
 
         background.sprite = Resources.Load<Sprite>($"{imgPath.path}/{img}");
 
         StopAllCoroutines();
+        audioSource.Stop();
         StartCoroutine(TypeSentence(sentence));
         
     }
@@ -122,20 +123,7 @@ public class DialogueManager : MonoBehaviour
             
         }
 
-        //foreach (char letter in sentence.ToCharArray())
-        //{
-        //    sentenceText.text += letter;
-            
-        //    yield return new WaitForSeconds(delay);
-
-        //    if (sentence[letter] % 2 == 0)
-        //    {
-        //        audioSource.PlayOneShot(typeAudio);
-
-        //        yield return new WaitForSeconds(delay);
-        //    }
-            
-        //}
+        continueButton.SetActive(true);
     }
 
     void EndDialogue()

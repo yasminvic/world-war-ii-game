@@ -21,7 +21,6 @@ public class Spawner : MonoBehaviour
     void Awake()
     {
         int randomDelay = Random.Range(delaySpawnMin, delaySpawnMax);
-        Debug.Log(randomDelay);
         InvokeRepeating(nameof(Spawn), initialDelay, randomDelay);
     }
 
