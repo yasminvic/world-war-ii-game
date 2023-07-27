@@ -13,10 +13,7 @@ public class Player : MonoBehaviour
 
     [Header("Sound Effects")]
     [SerializeField]
-    private AudioSource coinSound;
-
-    private int _score = 0;
-
+    private Clip coinSound;
 
     [Header("Shoot")]
     [SerializeField]
@@ -25,6 +22,9 @@ public class Player : MonoBehaviour
     private Clip shootClip;
     [SerializeField]
     private GameObject pivot;
+
+    private int _score = 0;
+
     void Update()
     {
         //controla a movimentação
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Coin"))
         {
             _score++;
-            coinSound.Play();
+            AudioManager.PlayClip(coinSound);
             Destroy(collision.gameObject);
             FindObjectOfType<Score>().UpdateScore(_score);
         }
