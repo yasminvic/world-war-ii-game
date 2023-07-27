@@ -37,6 +37,9 @@ public class DialogueManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField]
     private AudioClip typeAudio;
+    [Range(0f, 1f)]
+    [SerializeField]
+    private float volume = 0.2f;
     [SerializeField]
     private int delayTypeAudio;
     [Range(-3, 3)]
@@ -107,6 +110,7 @@ public class DialogueManager : MonoBehaviour
             if (i % delayTypeAudio == 0)
             {
                 audioSource.pitch = Random.Range(minPitch, maxPitch);
+                audioSource.volume = volume;
                 audioSource.PlayOneShot(typeAudio);
                 //yield return new WaitForSeconds(delay);
             }
