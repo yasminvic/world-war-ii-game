@@ -36,10 +36,19 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField]
-    private AudioSource typeAudio;
+    private AudioClip typeAudio;
+    [SerializeField]
+    private int delayTypeAudio;
+    [Range(-3, 3)]
+    [SerializeField]
+    private float minPitch;
+    [Range(-3, 3)]
+    [SerializeField]
+    private float maxPitch;
 
     private Queue<string> sentences;
     private Queue<string> images;
+    private AudioSource audioSource;
     void Start()
     {
         //instanciando
@@ -47,6 +56,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", true);
         sentences = new Queue<string>();
         images = new Queue<string>();
+        audioSource = this.gameObject.AddComponent<AudioSource>();
 
         //limpando variaveis
         titleText.text = "";
@@ -91,14 +101,37 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         sentenceText.text = "";
-        typeAudio.Play();
 
-        foreach (char letter in sentence.ToCharArray())
+        for (int i = 0; i < sentence.Length; i++)
         {
-            sentenceText.text += letter;
-            
+            if (i % delayTypeAudio == 0)
+            {
+                audioSource.pitch = Random.Range(minPitch, maxPitch);
+                audioSource.PlayOneShot(typeAudio);
+                //yield return new WaitForSeconds(delay);
+            }
+            sentenceText.text += sentence[i];
+
+           
             yield return new WaitForSeconds(delay);
+
+            
         }
+
+        //foreach (char letter in sentence.ToCharArray())
+        //{
+        //    sentenceText.text += letter;
+            
+        //    yield return new WaitForSeconds(delay);
+
+        //    if (sentence[letter] % 2 == 0)
+        //    {
+        //        audioSource.PlayOneShot(typeAudio);
+
+        //        yield return new WaitForSeconds(delay);
+        //    }
+            
+        //}
     }
 
     void EndDialogue()
