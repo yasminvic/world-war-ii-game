@@ -1098,7 +1098,7 @@ MonoBehaviour:
   sentenceText: {fileID: 1134618263}
   continueButton: {fileID: 116546481}
   background: {fileID: 1644659336}
-  delay: 0.1
+  delay: 0.08
   animator: {fileID: 1277460331}
   imgPath:
     path: CutScenes
@@ -1107,7 +1107,7 @@ MonoBehaviour:
     - scene2
     - scene1
   typeAudio: {fileID: 8300000, guid: fcfa73c2b03a53d47a29343f418a9bdf, type: 3}
-  volume: 0.5
+  volume: 0.092
   delayTypeAudio: 2
   minPitch: 1
   maxPitch: 2
