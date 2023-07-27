@@ -636,7 +636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861151609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46, y: -2.53, z: -0.005172165}
+  m_LocalPosition: {x: 0.91, y: -2.44, z: -0.005172165}
   m_LocalScale: {x: 6.898277, y: 6.898277, z: 6.898277}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -898,6 +898,9 @@ MonoBehaviour:
   playerBounds: {fileID: 1496640884}
   coinSound: {fileID: 6623393922272434399}
   shootPrefab: {fileID: 5846892263792330701, guid: 0c7ded29c8d1e824c842b7fca9213f37, type: 3}
+  shootClip:
+    audio: {fileID: 8300000, guid: 64fa862b2b8316942baba7e4068c2b0b, type: 3}
+    volume: 0.2
   pivot: {fileID: 1136991492}
 --- !u!212 &1105150593
 SpriteRenderer:
@@ -959,7 +962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105150591}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -638, y: -297, z: -9719.999}
+  m_LocalPosition: {x: -632, y: -273, z: -9719.999}
   m_LocalScale: {x: 515.2121, y: 515.2121, z: 158.46753}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1122,6 +1125,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1125027753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1125027754}
+  - component: {fileID: 1125027755}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1125027754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125027753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6730864, y: -2.066531, z: -0.046355084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1125027755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125027753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a742d31fff7b475418a962388416efbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1136991492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,7 +1421,7 @@ GameObject:
   m_Layer: 0
   m_Name: PlayerBounds
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1386,8 +1433,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496640881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -1.96, z: -0.00979286}
-  m_LocalScale: {x: 16, y: 4, z: 1}
+  m_LocalPosition: {x: 0, y: 0.13, z: -0.00979286}
+  m_LocalScale: {x: 16, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1403,10 +1450,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009464622, y: 0.10516214}
+  m_Offset: {x: -0.009464622, y: -2.8208804}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1417,7 +1464,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0189291, y: 1.5300164}
+  m_Size: {x: 1.0189291, y: 0.7771232}
   m_EdgeRadius: 0
 --- !u!1001 &1550796960
 PrefabInstance:
@@ -2039,6 +2086,54 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!1 &2131395625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2131395627}
+  - component: {fileID: 2131395628}
+  m_Layer: 0
+  m_Name: ExplosionManagerFx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2131395627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131395625}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6730864, y: -2.066531, z: -0.046355084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2131395628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131395625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b814b1825809d64aa7ed597afc9e5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip:
+    audio: {fileID: 8300000, guid: 1521f4ac86d355d488101cf85592bdfe, type: 3}
+    volume: 0.2
+  prefab: {fileID: 3168884864679864430, guid: 8de77afb8beed894dbda58c4c8cfc9ce, type: 3}
 --- !u!1001 &5409023062037726596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2336,8 +2431,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2708835708306950487, guid: 4acbaf61f97acac4cbf33a34ab7b9a04, type: 3}
-      propertyPath: m_Volume
+      propertyPath: m_Pitch
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708835708306950487, guid: 4acbaf61f97acac4cbf33a34ab7b9a04, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4555167727067542487, guid: 4acbaf61f97acac4cbf33a34ab7b9a04, type: 3}
       propertyPath: m_Name

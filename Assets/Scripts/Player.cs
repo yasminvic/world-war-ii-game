@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject shootPrefab;
     [SerializeField]
+    private Clip shootClip;
+    [SerializeField]
     private GameObject pivot;
     void Update()
     {
@@ -43,7 +45,7 @@ public class Player : MonoBehaviour
         var move = new Vector3
         (
             h * moveSpeed * Time.deltaTime,
-            v * 0
+            v * moveSpeed * Time.deltaTime
         );
 
 
@@ -74,6 +76,7 @@ public class Player : MonoBehaviour
         }
 
         Instantiate(shootPrefab, pivot.transform.position, pivot.transform.rotation);
+        AudioManager.PlayClip(shootClip);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
