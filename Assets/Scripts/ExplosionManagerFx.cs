@@ -25,7 +25,6 @@ public class ExplosionManagerFx : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void Create(Vector3 position, Quaternion rotation)
     {
         Instantiate(prefab, position, rotation);

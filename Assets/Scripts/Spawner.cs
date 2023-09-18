@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Diagnostics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
@@ -18,27 +19,36 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private float initialDelay;
 
+    [SerializeField]
+    private float finishTime;
+
     void Awake()
     {
         int randomDelay = Random.Range(delaySpawnMin, delaySpawnMax);
+        //if(randomDelay < finishTime)
+        //{
+            
+        //}
+
         InvokeRepeating(nameof(Spawn), initialDelay, randomDelay);
+
     }
 
     void Spawn()
     {
 
-        float count = 9f;
+        float count = 3f;
         foreach (var prefab in spawnPrefabs)
         {
             Instantiate(prefab, 
                 new Vector2
                 (
                     transform.position.x - count,
-                    transform.position.y
+                    transform.position.y - count
                 ), 
                 transform.rotation);
 
-            count-=3;
+            count-=1;
         }
         
     }
