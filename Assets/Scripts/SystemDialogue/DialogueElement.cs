@@ -9,10 +9,13 @@ public class DialogueElement : MonoBehaviour
     [SerializeField]
     private Dialogue message;
 
+    [Header("Game Objects")]
     [SerializeField]
     private TextMeshProUGUI titleObject;
     [SerializeField]
     private TextMeshProUGUI messageObject;
+    [SerializeField]
+    private GameObject panel;
 
     [Header("Audio")]
     [SerializeField]
@@ -28,9 +31,8 @@ public class DialogueElement : MonoBehaviour
     [Range(-3, 3)]
     [SerializeField]
     private float maxPitch;
-
     [SerializeField]
-    private float delay;
+    private float delayType;
 
     private Queue<string> messages;
     private AudioSource audioSource;
@@ -40,24 +42,25 @@ public class DialogueElement : MonoBehaviour
         //instanciando
         messages = new Queue<string>();
         audioSource = this.gameObject.AddComponent<AudioSource>();
+        titleObject.text = message.title;
 
         //limpando variaveis
         messageObject.text = "";
         messages.Clear();
-
-
-        titleObject.text = message.title;
+        
+        //Tornando invisível
+        panel.SetActive(false);
 
         foreach (var message in message.sentences)
         {
             messages.Enqueue(message);
         }
-
-        DisplayMessage();
     }
      
-    void DisplayMessage()
+    public void DisplayMessage()
     {
+        Debug.Log("clicou");
+        panel.SetActive(true);
         string textOnScreen = messages.Dequeue();
 
         StopAllCoroutines();
@@ -81,7 +84,7 @@ public class DialogueElement : MonoBehaviour
             messageObject.text += textOnScreen[i];
 
 
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(delayType);
 
 
         }

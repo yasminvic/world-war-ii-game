@@ -1101,7 +1101,7 @@ MonoBehaviour:
   delay: 0.08
   animator: {fileID: 1277460331}
   imgPath:
-    path: CutScenes
+    path: CutScenes/Level1
     images:
     - scene3
     - scene2
