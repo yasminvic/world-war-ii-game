@@ -89,4 +89,10 @@ public class DialogueElement : MonoBehaviour
 
         }
     }
+
+    public void EndDialogue()
+    {
+        StopAllCoroutines();
+        panel.SetActive(false);
+    }
 }

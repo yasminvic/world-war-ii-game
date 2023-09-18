@@ -21,6 +21,11 @@ public class Enemy : MonoBehaviour
             AudioManager.PlayClip(explosionClip);
 
         }
+
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
         
     }
 }
