@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject shootPrefab;
     [SerializeField]
+    private GameObject flashPrefab;
+    [SerializeField]
     private Clip shootClip;
     [SerializeField]
     private GameObject pivot;
@@ -75,6 +77,7 @@ public class Player : MonoBehaviour
             return;
         }
 
+        Instantiate(flashPrefab, pivot.transform.position, pivot.transform.rotation);
         Instantiate(shootPrefab, pivot.transform.position, pivot.transform.rotation);
         AudioManager.PlayClip(shootClip);
     }

@@ -908,7 +908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5177016307781801743, guid: 909529b21c0918049b183fb103b832fa, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5177016307781801743, guid: 909529b21c0918049b183fb103b832fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1394,6 +1394,7 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 97ff990d262e2744d8c8103d37a270ef, type: 3}
     volume: 0.2
   shootPrefab: {fileID: 5846892263792330701, guid: 0c7ded29c8d1e824c842b7fca9213f37, type: 3}
+  flashPrefab: {fileID: 3173183281863508124, guid: 0e8a72af2c2d27745a4db774d3255d06, type: 3}
   shootClip:
     audio: {fileID: 8300000, guid: 22745e658b145714382a7de579700af9, type: 3}
     volume: 0.44
@@ -3038,7 +3039,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1324804340
 MonoBehaviour:
@@ -4230,7 +4231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921482439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.246, y: 0.092, z: 0}
+  m_LocalPosition: {x: 0.32, y: 0.092, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
