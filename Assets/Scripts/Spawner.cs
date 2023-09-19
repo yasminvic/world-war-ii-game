@@ -60,7 +60,7 @@ public class Spawner : MonoBehaviour
 
     void DestroySpawner()
     {
-        if (finishTime < 0)
+        if (finishTime < 9)
         {
             Destroy(gameObject);
         }

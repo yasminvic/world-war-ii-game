@@ -86,7 +86,9 @@ public class Player : MonoBehaviour
             _score++;
             AudioManager.PlayClip(coinSound);
             Destroy(collision.gameObject);
+            Debug.Log($"score: {_score}");
             FindObjectOfType<Score>().UpdateScore(_score);
+            
         }
     }
 }
