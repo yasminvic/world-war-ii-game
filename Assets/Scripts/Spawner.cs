@@ -21,50 +21,43 @@ public class Spawner : MonoBehaviour
     private float initialDelay;
 
     [SerializeField]
+    private Range distanciamento;
+
+    [SerializeField]
     private float finishTime;
 
     void Awake()
     {
         int randomDelay = Random.Range(delaySpawnMin, delaySpawnMax);
 
-        if (finishTime > 0)
-        {
-            InvokeRepeating(nameof(Spawn), initialDelay, randomDelay);
-        }
+        InvokeRepeating(nameof(Spawn), initialDelay, randomDelay);
 
     }
 
     void Spawn()
     {
-
-        float count = 3f;
         foreach (var prefab in spawnPrefabs)
         {
+            int x = Random.Range(distanciamento.min, distanciamento.max);
             Instantiate(prefab, 
                 new Vector2
                 (
-                    transform.position.x - count,
-                    transform.position.y - count
+                    transform.position.x - x,
+                    transform.position.y - x
                 ), 
                 transform.rotation);
-
-            count-=1;
-
 
         }
 
         DestroySpawner();
-
-        
     }
 
     void DestroySpawner()
     {
-        if (finishTime < 9)
+        if (finishTime < 0)
         {
             Destroy(gameObject);
         }
         finishTime -= 1;
-        Debug.Log(finishTime);
     }
 }
