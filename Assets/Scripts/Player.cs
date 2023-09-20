@@ -25,7 +25,26 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject pivot;
 
+    [Header("Damage")]
+    [SerializeField]
+    private int maxHealth;
+    [SerializeField]
+    private int damageHealth;
+    [SerializeField]
+    private HealthBar healthBar;
+    [SerializeField]
+    private GameObject shootEnemy;
+    [SerializeField]
+    private GameObject enemy;
+
+    private int currentHealth;
     private int _score = 0;
+
+    private void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
 
     void Update()
     {
@@ -37,6 +56,7 @@ public class Player : MonoBehaviour
 
         //atirar
         Shoot();
+
     }
 
     void Move()
@@ -82,6 +102,13 @@ public class Player : MonoBehaviour
         AudioManager.PlayClip(shootClip);
     }
 
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Coin"))
@@ -92,6 +119,12 @@ public class Player : MonoBehaviour
             Debug.Log($"score: {_score}");
             FindObjectOfType<Score>().UpdateScore(_score);
             
+        }
+
+        //HealthBar
+        if(collision.CompareTag("Shoot Left") || collision.CompareTag("Enemy"))
+        {
+            TakeDamage(damageHealth);
         }
     }
 }
