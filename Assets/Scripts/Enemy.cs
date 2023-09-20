@@ -8,6 +8,20 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private Clip explosionClip;
 
+    [Header("Shoot")]
+    [SerializeField]
+    private GameObject shootPrefab;
+    [SerializeField]
+    private GameObject flashPrefab;
+    [SerializeField]
+    private Clip shootClip;
+    [SerializeField]
+    private float initialDelay;
+    [SerializeField]
+    private Range delayShoot;
+    [SerializeField]
+    private GameObject pivotShoot;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Shoot"))
@@ -27,5 +41,20 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
         
+    }
+
+    private void Awake()
+    {
+        int delay = Random.Range(delayShoot.min, delayShoot.max);
+        InvokeRepeating(nameof(Shoot), initialDelay, delay);
+    }
+
+    private void Shoot()
+    {
+
+        Instantiate(flashPrefab, pivotShoot.transform.position, pivotShoot.transform.rotation);
+        Instantiate(shootPrefab, pivotShoot.transform.position, pivotShoot.transform.rotation);
+        AudioManager.PlayClip(shootClip);
+
     }
 }

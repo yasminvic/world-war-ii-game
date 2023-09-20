@@ -19,6 +19,7 @@ public class DisplayMessage : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("colidiu");
             DisplayText();
         }
         
@@ -26,13 +27,19 @@ public class DisplayMessage : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        icon.SetActive(false);
+        if (collision.CompareTag("Player"))
+        {
+            icon.SetActive(false);
+        }
+        
     }
 
 
     private void DisplayText()
     {
+        Debug.Log("foi");
         icon.SetActive(true);
+        Debug.Log("foi denovo");
     }
 
 
