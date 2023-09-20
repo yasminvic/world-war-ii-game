@@ -42,6 +42,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private string nameSceneDead;
 
+    [Header("Scene Win")]
+    [SerializeField]
+    private string nameSceneWin;
+
     private int currentHealth;
     private int _score = 0;
 
@@ -63,6 +67,8 @@ public class Player : MonoBehaviour
         Shoot();
 
         Dead();
+
+        Win();
 
     }
 
@@ -117,6 +123,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Win()
+    {
+        SceneManager.LoadScene(nameSceneWin);
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -139,6 +150,11 @@ public class Player : MonoBehaviour
         if(collision.CompareTag("Shoot Left") || collision.CompareTag("Enemy"))
         {
             TakeDamage(damageHealth);
+        }
+
+        if (collision.CompareTag("Flag"))
+        {
+            Win();
         }
     }
 }

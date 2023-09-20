@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Shoot
   - Shoot Left
+  - Flag
   layers:
   - Default
   - TransparentFX
