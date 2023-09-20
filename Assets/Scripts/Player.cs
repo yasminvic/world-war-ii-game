@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
     private GameObject shootEnemy;
     [SerializeField]
     private GameObject enemy;
+    [SerializeField]
+    private GameObject explosionPrefab;
 
     [Header("Scene Dead")]
     [SerializeField]
@@ -67,9 +69,6 @@ public class Player : MonoBehaviour
         Shoot();
 
         Dead();
-
-        Win();
-
     }
 
     void Move()
@@ -130,6 +129,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);

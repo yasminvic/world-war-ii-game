@@ -22,6 +22,11 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject pivotShoot;
 
+    [SerializeField]
+    private GameObject pivotPlayer;
+    [SerializeField]
+    private float distanciaShoot;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Shoot"))
@@ -51,10 +56,13 @@ public class Enemy : MonoBehaviour
 
     private void Shoot()
     {
-
-        Instantiate(flashPrefab, pivotShoot.transform.position, pivotShoot.transform.rotation);
-        Instantiate(shootPrefab, pivotShoot.transform.position, pivotShoot.transform.rotation);
-        AudioManager.PlayClip(shootClip);
+        if(pivotPlayer.transform.position.x - gameObject.transform.position.x < distanciaShoot)
+        {
+            Instantiate(flashPrefab, pivotShoot.transform.position, pivotShoot.transform.rotation);
+            Instantiate(shootPrefab, pivotShoot.transform.position, pivotShoot.transform.rotation);
+            AudioManager.PlayClip(shootClip);
+        }
+        
 
     }
 }
