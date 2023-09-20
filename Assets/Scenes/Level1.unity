@@ -1480,6 +1480,7 @@ MonoBehaviour:
   healthBar: {fileID: 1117001326}
   shootEnemy: {fileID: 4890863045054798525, guid: 06b03f7d8bdaea34fbdfa4917aec0a4b, type: 3}
   enemy: {fileID: 9166896790434486724, guid: 7c4cc3a67dab4964f93f4463b304952f, type: 3}
+  nameSceneDead: Dead
 --- !u!60 &657337127
 PolygonCollider2D:
   m_ObjectHideFlags: 0

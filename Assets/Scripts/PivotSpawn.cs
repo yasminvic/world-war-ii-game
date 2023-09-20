@@ -10,12 +10,17 @@ public class PivotSpawn : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("nasceu enemy");
             Instantiate(spawnerObject);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

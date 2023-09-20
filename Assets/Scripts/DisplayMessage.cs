@@ -19,7 +19,6 @@ public class DisplayMessage : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("colidiu");
             DisplayText();
         }
         
@@ -37,9 +36,7 @@ public class DisplayMessage : MonoBehaviour
 
     private void DisplayText()
     {
-        Debug.Log("foi");
         icon.SetActive(true);
-        Debug.Log("foi denovo");
     }
 
 

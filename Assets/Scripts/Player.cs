@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Vector3 = UnityEngine.Vector3;
 
 public class Player : MonoBehaviour
@@ -37,6 +38,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject enemy;
 
+    [Header("Scene Dead")]
+    [SerializeField]
+    private string nameSceneDead;
+
     private int currentHealth;
     private int _score = 0;
 
@@ -56,6 +61,8 @@ public class Player : MonoBehaviour
 
         //atirar
         Shoot();
+
+        Dead();
 
     }
 
@@ -102,6 +109,14 @@ public class Player : MonoBehaviour
         AudioManager.PlayClip(shootClip);
     }
 
+    public void Dead()
+    {
+        if(currentHealth <= 0)
+        {
+            SceneManager.LoadScene(nameSceneDead);
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -116,7 +131,6 @@ public class Player : MonoBehaviour
             _score++;
             AudioManager.PlayClip(coinSound);
             Destroy(collision.gameObject);
-            Debug.Log($"score: {_score}");
             FindObjectOfType<Score>().UpdateScore(_score);
             
         }
