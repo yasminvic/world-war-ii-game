@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         Move();
 
         //limite da tela
-        //ApplyBounds();
+        ApplyBounds();
 
         //atirar
         Shoot();
