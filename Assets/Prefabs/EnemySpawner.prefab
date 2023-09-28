@@ -47,10 +47,14 @@ MonoBehaviour:
   spawnPrefabs:
   - {fileID: 9166896790434486724, guid: 7c4cc3a67dab4964f93f4463b304952f, type: 3}
   - {fileID: 9166896790434486724, guid: 7c4cc3a67dab4964f93f4463b304952f, type: 3}
-  delaySpawnMax: 5
-  delaySpawnMin: 3
-  initialDelay: 0
+  - {fileID: 9166896790434486724, guid: 7c4cc3a67dab4964f93f4463b304952f, type: 3}
+  - {fileID: 9166896790434486724, guid: 7c4cc3a67dab4964f93f4463b304952f, type: 3}
+  - {fileID: 9166896790434486724, guid: 7c4cc3a67dab4964f93f4463b304952f, type: 3}
+  - {fileID: 9166896790434486724, guid: 7c4cc3a67dab4964f93f4463b304952f, type: 3}
+  delaySpawnMax: 1
+  delaySpawnMin: 1
+  initialDelay: 1
   distanciamento:
     min: 1
-    max: 3
-  finishTime: 10
+    max: 5
+  finishTime: 20

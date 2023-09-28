@@ -10,7 +10,6 @@ public class PivotSpawn : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("nasceu enemy");
             Instantiate(spawnerObject);
         }
     }

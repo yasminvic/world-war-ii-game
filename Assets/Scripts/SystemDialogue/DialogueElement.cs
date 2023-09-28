@@ -59,7 +59,6 @@ public class DialogueElement : MonoBehaviour
      
     public void DisplayMessage()
     {
-        Debug.Log("clicou");
         panel.SetActive(true);
         string textOnScreen = messages.Dequeue();
 

@@ -89,7 +89,6 @@ public class DialogueManagerCutScene : MonoBehaviour
             return;
         }
 
-        continueButton.SetActive(false);
 
         string sentence = sentences.Dequeue();
         string img = images.Dequeue();
@@ -113,7 +112,6 @@ public class DialogueManagerCutScene : MonoBehaviour
                 audioSource.pitch = Random.Range(minPitch, maxPitch);
                 audioSource.volume = volume;
                 audioSource.PlayOneShot(typeAudio);
-                //yield return new WaitForSeconds(delay);
             }
             sentenceText.text += sentence[i];
 
@@ -122,13 +120,20 @@ public class DialogueManagerCutScene : MonoBehaviour
 
           
         }
-
-        continueButton.SetActive(true);
     }
 
     void EndDialogue()
     {
+        StopAllCoroutines();
         animator.SetBool("IsOpen", false);
         FindObjectOfType<LevelLoader>().LoadScene();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            EndDialogue();
+        }
     }
 }

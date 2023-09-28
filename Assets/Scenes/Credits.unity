@@ -884,7 +884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Luis Ricardo Uriarte
+  m_text: Luiz Ricardo Uriarte
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 987d048a9976183488cad09fcbf11608, type: 2}
   m_sharedMaterial: {fileID: 2345326443050044500, guid: 987d048a9976183488cad09fcbf11608, type: 2}
