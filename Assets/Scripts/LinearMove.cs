@@ -11,6 +11,15 @@ public class LinearMove : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(direction * moveSpeed * Time.deltaTime);
+        float speed;
+        if (PauseMenu.IsPaused)
+        {
+            speed = 0;
+        }
+        else
+        {
+            speed = moveSpeed;
+        }
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 }

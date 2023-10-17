@@ -59,20 +59,24 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //controla a movimentação
-        Move();
+        if (!PauseMenu.IsPaused)
+        {
+            //controla a movimentação
+            Move();
 
+            //atirar
+            Shoot();
+        }
+        
         //limite da tela
         ApplyBounds();
-
-        //atirar
-        Shoot();
 
         Dead();
     }
 
     void Move()
     {
+        
         var v = Input.GetAxis("Vertical");
         var h = Input.GetAxis("Horizontal");
 

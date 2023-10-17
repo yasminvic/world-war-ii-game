@@ -9,6 +9,7 @@ public class DestroyAfterTime : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, delay);
+            Destroy(gameObject, delay);
+        
     }
 }

@@ -51,7 +51,15 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         int delay = Random.Range(delayShoot.min, delayShoot.max);
+
+        if (!PauseMenu.IsPaused)
+        {
+            //CancelInvoke();
+            
+        }
+
         InvokeRepeating(nameof(Shoot), initialDelay, delay);
+
     }
 
     private void Shoot()
