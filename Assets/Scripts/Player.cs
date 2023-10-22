@@ -59,15 +59,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!PauseMenu.IsPaused)
-        {
-            //controla a movimentação
-            Move();
 
-            //atirar
-            Shoot();
-        }
+        //controla a movimentação
+        Move();
         
+        //atirar
+        Shoot();
+
         //limite da tela
         ApplyBounds();
 

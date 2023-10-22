@@ -52,12 +52,6 @@ public class Enemy : MonoBehaviour
     {
         int delay = Random.Range(delayShoot.min, delayShoot.max);
 
-        if (!PauseMenu.IsPaused)
-        {
-            //CancelInvoke();
-            
-        }
-
         InvokeRepeating(nameof(Shoot), initialDelay, delay);
 
     }
@@ -69,8 +63,7 @@ public class Enemy : MonoBehaviour
             Instantiate(flashPrefab, pivotShoot.transform.position, pivotShoot.transform.rotation);
             Instantiate(shootPrefab, pivotShoot.transform.position, pivotShoot.transform.rotation);
             AudioManager.PlayClip(shootClip);
-        }
-        
+        } 
 
     }
 }

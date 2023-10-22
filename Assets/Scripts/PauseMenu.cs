@@ -29,12 +29,14 @@ public class PauseMenu : MonoBehaviour
     public void Despausar()
     {
         panelPause.SetActive(false);
+        Time.timeScale = 1f;
         IsPaused = false;
     }
 
     void Pausar()
     {
         panelPause.SetActive(true);
+        Time.timeScale = 0f;
         IsPaused = true;
     }
 }
