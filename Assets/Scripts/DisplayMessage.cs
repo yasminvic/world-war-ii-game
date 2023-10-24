@@ -20,6 +20,7 @@ public class DisplayMessage : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             DisplayText();
+            
         }
         
     }
@@ -33,10 +34,14 @@ public class DisplayMessage : MonoBehaviour
         
     }
 
-
     private void DisplayText()
     {
         icon.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("apertou");
+            FindObjectOfType<DialogueElement>().DisplayMessage();
+        }
     }
 
 
