@@ -1,6 +1,0 @@
-{
-    "username": "yasminvic",
-    "password": "password",
-    "score": 1,
-    "weapon": 0
-}

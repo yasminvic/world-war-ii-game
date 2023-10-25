@@ -6,12 +6,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public PlayerDB player;
-
     public Players players;
+
+
     void Start()
     {
         player = new PlayerDB();
         players = new Players();
+
 
         player.username = "yasminvic";
         player.password = "password";
@@ -19,9 +21,13 @@ public class PlayerController : MonoBehaviour
         player.weapon = 0;
 
         player.Save();
+        players.LoadData(player.LoadData());
 
-        players.players.Add(player);
-        players.Save();
+
+
+        //players.players.Add(player);
+        //players.Save();
+
     }
 
 }

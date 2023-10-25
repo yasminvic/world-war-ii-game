@@ -16,12 +16,25 @@ public class PlayerDB
 
     public int weapon;
 
-    private string path = "Assets/DataBase/Player.txt";
+    private string path = "Assets/DataBase/Players.txt";
 
 
     public void Save()
     {
+        //separa por vírgula só se o arquivo existir
+        if(File.Exists(path)) {
+            var file = File.AppendText(path);
+            file.WriteLine(","); // Adiciona o texto ao fim do arquivo
+            file.Close();
+        }
+        
         var content = JsonUtility.ToJson(this, true);
-        File.WriteAllText(path, content);
+        File.AppendAllText(path, content);
+
+    }
+
+    public String LoadData()
+    {
+        return File.ReadAllText(path);   
     }
 }
