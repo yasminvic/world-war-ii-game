@@ -24,7 +24,7 @@ public class PlayerDB
         //separa por vírgula só se o arquivo existir
         if(File.Exists(path)) {
             var file = File.AppendText(path);
-            file.WriteLine(","); // Adiciona o texto ao fim do arquivo
+            file.WriteLine(";"); // Adiciona o texto ao fim do arquivo
             file.Close();
         }
         
@@ -33,8 +33,12 @@ public class PlayerDB
 
     }
 
-    public String LoadData()
+    public string[] LoadData()
     {
-        return File.ReadAllText(path);   
+        var players = File.ReadAllText(path); 
+        
+        string[] playerList = players.Split(';');
+
+        return playerList;
     }
 }

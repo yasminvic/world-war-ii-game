@@ -3,13 +3,13 @@
     "password": "password",
     "score": 1,
     "weapon": 0
-},
+};
 {
     "username": "yasminvic",
     "password": "password",
     "score": 1,
     "weapon": 0
-},
+};
 {
     "username": "yasminvic",
     "password": "password",
