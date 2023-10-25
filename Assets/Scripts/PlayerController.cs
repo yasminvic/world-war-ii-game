@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         if (ValidacaoPlayer())
         {
             player.Save();
-            Debug.Log("tudo certo");
+            alert.SetActive(false);
         } 
 
     }
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         {
             var playerToString = JsonUtility.FromJson<PlayerDB>(player);
 
-            if (playerToString.username.Equals(username))
+            if (playerToString.username.Equals(username.text))
             {
                 alert.SetActive(true);
                 return false;

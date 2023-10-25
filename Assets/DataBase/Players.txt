@@ -15,4 +15,28 @@
     "password": "456",
     "score": 0,
     "weapon": 0
+};
+{
+    "username": "yasminvic",
+    "password": "123",
+    "score": 0,
+    "weapon": 0
+};
+{
+    "username": "teste1",
+    "password": "123",
+    "score": 0,
+    "weapon": 0
+};
+{
+    "username": "teste2",
+    "password": "123",
+    "score": 0,
+    "weapon": 0
+};
+{
+    "username": "teste4",
+    "password": "123",
+    "score": 0,
+    "weapon": 0
 }
