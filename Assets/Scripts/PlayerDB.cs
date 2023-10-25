@@ -16,7 +16,7 @@ public class PlayerDB
 
     public int weapon;
 
-    private string path = "Assets/DataBase/Players.txt";
+    private readonly string path = "Assets/DataBase/Players.txt";
 
 
     public void Save()

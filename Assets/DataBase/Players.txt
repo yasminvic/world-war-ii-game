@@ -1,18 +1,18 @@
 {
-    "username": "yasminvic",
-    "password": "password",
-    "score": 1,
+    "username": "Yasminvic",
+    "password": "123",
+    "score": 0,
     "weapon": 0
 };
 {
-    "username": "yasminvic",
-    "password": "password",
-    "score": 1,
+    "username": "teste1",
+    "password": "123",
+    "score": 0,
     "weapon": 0
 };
 {
-    "username": "yasminvic",
-    "password": "password",
-    "score": 1,
+    "username": "teste1",
+    "password": "456",
+    "score": 0,
     "weapon": 0
 }

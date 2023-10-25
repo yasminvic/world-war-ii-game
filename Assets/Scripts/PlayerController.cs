@@ -1,15 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public PlayerDB player;
+    private PlayerDB player;
 
+    [SerializeField]
+    public TMP_InputField username;
+    [SerializeField]
+    public TMP_InputField password;
+    [SerializeField]
+    public GameObject alert;
 
     void Start()
     {
+        player = new PlayerDB();
+    }
+
+    public void SavePlayer()
+    {
+        //PlayerDB player = new PlayerDB();
+        player.username = username.text;
+        player.password = password.text;
+        player.score = 0;
+        player.weapon = 0;
+
+        if (ValidacaoPlayer())
+        {
+            player.Save();
+            Debug.Log("tudo certo");
+        } 
+
+    }
+
+    public bool ValidacaoPlayer()
+    {
+        var playerList = player.LoadData();
+
+        foreach (var player in playerList)
+        {
+            var playerToString = JsonUtility.FromJson<PlayerDB>(player);
+
+            if (playerToString.username.Equals(username))
+            {
+                alert.SetActive(true);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /*
+    void Start()
+    {
+        
         player = new PlayerDB();
 
         player.username = "yasminvic";
@@ -31,10 +81,11 @@ public class PlayerController : MonoBehaviour
             playerConverted.score = playerToString.score;
             playerConverted.weapon = playerToString.weapon;
 
-            Debug.Log(playerConverted.username);
 
         }
+        
 
     }
+    */
 
 }
